@@ -1,1 +1,1 @@
-# Cn31-Storage1
+# akamai-gen
