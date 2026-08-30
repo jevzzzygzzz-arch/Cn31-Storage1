@@ -1,0 +1,111 @@
+<!-- # Educational Cybersecurity measures purposes: sanitized for safe sharing, review, and classroom-style inspection of the code here. -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#050506">
+    <title>CN31 Token Server</title>
+    <link rel="stylesheet" href="/dashboard-assets/styles.css">
+  </head>
+  <body data-product="CN31 Token Server" data-mode="RAM queue" data-accent="cn31">
+    <div class="background-wrap" aria-hidden="true">
+      <div class="grid-wash"></div>
+      <div class="beam beam-a"></div>
+      <div class="beam beam-b"></div>
+      <div class="scanline"></div>
+    </div>
+    <main class="shell">
+      <header class="topbar">
+        <section class="identity">
+          <div class="mark" data-icon="network"></div>
+          <div>
+            <p class="eyebrow">Antrax CN31 Server</p>
+            <h1>CN31 Token Server</h1>
+          </div>
+        </section>
+        <section class="toolbar">
+          <button class="icon-button" id="refreshButton" type="button" aria-label="Refresh dashboard" title="Refresh">
+            <span data-icon="refresh"></span>
+          </button>
+          <button class="text-button danger" id="flushButton" type="button">
+            <span data-icon="trash"></span>
+            <span>Flush</span>
+          </button>
+        </section>
+      </header>
+
+      <section class="hero-grid">
+        <article class="hero-panel">
+          <div class="hero-topline">
+            <div class="panel-label">Live Queue</div>
+            <span class="live-dot">Online</span>
+          </div>
+          <div class="hero-value" id="queueSize">0</div>
+          <div class="hero-copy">tokens ready for controlled review</div>
+          <div class="meter" aria-label="Queue capacity">
+            <div id="queueMeter"></div>
+          </div>
+          <div class="feature-wrap">
+            <span><i></i>RAM only</span>
+            <span><i></i>Auto purge</span>
+            <span><i></i>API ready</span>
+          </div>
+        </article>
+        <article class="stat-card">
+          <span data-icon="inbox"></span>
+          <p>Received</p>
+          <strong id="received">0</strong>
+        </article>
+        <article class="stat-card">
+          <span data-icon="send"></span>
+          <p>Served</p>
+          <strong id="served">0</strong>
+        </article>
+        <article class="stat-card">
+          <span data-icon="clock"></span>
+          <p>Expired</p>
+          <strong id="expired">0</strong>
+        </article>
+      </section>
+
+      <section class="workspace">
+        <article class="panel">
+          <div class="panel-heading">
+            <div>
+              <p class="panel-label">Operational Status</p>
+              <h2>Queue Health</h2>
+            </div>
+            <span class="live-pill" id="stateLabel">Syncing</span>
+          </div>
+          <div class="status-grid">
+            <div><span>Peak queue</span><strong id="peakQueue">0</strong></div>
+            <div><span>Tokens / min</span><strong id="rate">0.00</strong></div>
+            <div><span>TTL</span><strong id="ttl">0s</strong></div>
+            <div><span>Uptime</span><strong id="uptime">0s</strong></div>
+          </div>
+          <div class="route-wrap" aria-label="Available routes">
+            <span>POST /api/save-token</span>
+            <span>GET /api/get-token</span>
+            <span>GET /api/token/bulk</span>
+            <span>DELETE /api/tokens</span>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-heading">
+            <div>
+              <p class="panel-label">Recent Activity</p>
+              <h2>Token Window</h2>
+            </div>
+            <span class="quiet">Auto refresh 3s</span>
+          </div>
+          <div class="token-list" id="tokenList">
+            <div class="empty">No tokens in queue</div>
+          </div>
+        </article>
+      </section>
+    </main>
+    <script src="/dashboard-assets/app.js"></script>
+  </body>
+</html>
